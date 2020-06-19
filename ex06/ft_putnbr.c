@@ -17,7 +17,16 @@ void	ft_putnbr(int nb)
 		ft_putchar('-');
 	}
 	nb_copy = nb;
-	if(nb_copy >=10)
+	if (nb_copy >= 100)
+	{
+		mod = nb_copy % 100;
+		ft_putchar((nb_copy/100)+'0');
+		ft_putchar((mod/10)+'0');
+		mod = mod % 10;
+		ft_putchar(mod + '0');
+
+	}
+	else if(nb_copy >=10)
 	{
 		mod = nb_copy % 10;
 	   	ft_putchar((nb_copy/10) + '0');
@@ -31,6 +40,6 @@ void	ft_putnbr(int nb)
 
 int main(void)
 {
-	ft_putnbr(422);
+	ft_putnbr(-142);
 	return(0);
 }
